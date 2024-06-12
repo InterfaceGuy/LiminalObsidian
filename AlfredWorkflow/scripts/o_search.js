@@ -346,10 +346,8 @@ function run() {
 	        uid: readmeRelativePath,
 	        icon: { path: `${vaultPath}/${name}/${name}.png` }, // Use a folder icon or any other you prefer for repositories
 	        mods: {
-			  ctrl: {
-			    valid: true,
-			    subtitle: 'Open in Gitfox',
-			    script: `cd ${vaultPath}; gitfox ${name}`
+			  command: {
+			    arg: name,
 			  },
 			  shift: {
 			    valid: true,
@@ -361,7 +359,7 @@ function run() {
 			    subtitle: 'Open Folder in Finder',
 			    script: `open "${vaultPath}/${relativePath}"`
 			  },
-			  command: {
+			  ctrl: {
 			    valid: true,
 			    subtitle: 'Open GIF',
 			    arg: `${relativePath}/${name}.gif`
