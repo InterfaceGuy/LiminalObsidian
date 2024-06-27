@@ -119,8 +119,8 @@ function run() {
 
 	// returns *absolute* paths
 	let folderArray = app
-		.doShellScript(`find "${pathToSearch}" -type d -mindepth 1 -not -path "*/.*"`)
-		.split("\r");
+	    .doShellScript(`find "${vaultPath}" -maxdepth 1 -type d -mindepth 1 -not -path "*/.*"`)
+	    .split("\r");
 	if (folderArray[0] === "") folderArray = [];
 
 	//──────────────────────────────────────────────────────────────────────────────
